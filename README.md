@@ -1,45 +1,59 @@
-# 🏔️ BuddyInHills - Trip Discovery Web Application
+# 🏔️ BuddyInHills – Trip Discovery App
 
-A responsive Trip Discovery web application built with **React.js** as part of the *Buddy In Hills React Frontend Internship Assessment*.
+A modern, responsive **Trip Discovery Web Application** built with **React.js** for the **Buddy In Hills React Frontend Internship Assessment**.
 
-This project demonstrates React fundamentals, component architecture, API integration, UI/UX thinking, responsiveness, and clean code practices.
-
----
-
-## 🚀 Live Demo
-
-https://trip-discovery-app-e4qv.vercel.app/
+The application uses the **DummyJSON Products API**, where each product is presented as a travel package/trip. The focus of this project is on React fundamentals, reusable components, API integration, responsive design, and clean, maintainable code.
 
 ---
 
-## 📦 Tech Stack
+# 🚀 Live Demo
 
-- React.js  
-- JavaScript (or TypeScript if used)  
-- React Router DOM  
-- Axios / Fetch API  
-- Tailwind CSS  
-- Vite  
-- LocalStorage (if implemented)
+🔗 https://trip-discovery-app-e4qv.vercel.app/
 
 ---
 
-## ✨ Features
+# 📂 GitHub Repository
 
-### 🏠 Home Page
-- Responsive card layout displaying trips  
-- Image, Trip Name, Destination, Price, Rating, Description, CTA button  
+🔗 https://github.com/Sara12-2/Trip-discovery-app
 
 ---
 
-### 🔍 Search
+# ✨ Features
+
+## 🏠 Home Page
+
+- Display all trips in a responsive card layout
+- Trip Image
+- Trip Name
+- Destination (Category)
+- Price
+- Rating
+- Short Description
+- Explore Button
+
+---
+
+## 🔍 Search
+
+- Search trips using the API
+- Dynamic search results
+- Handles empty search results gracefully
+
+API:
+
 ```
 GET /products/search?q=...
 ```
 
 ---
 
-### 🗂️ Category Filter
+## 🗂️ Category Filter
+
+- Filter trips by destination/category
+- Dynamically fetch categories from API
+
+APIs:
+
 ```
 GET /products/categories
 GET /products/category/{category}
@@ -47,52 +61,109 @@ GET /products/category/{category}
 
 ---
 
-### 📄 Trip Details Page
-- Large Image  
-- Title  
-- Description  
-- Rating  
-- Price  
-- Category  
-- Additional Info  
+## 📄 Trip Details Page
+
+Displays complete trip information including:
+
+- Large Image
+- Trip Name
+- Full Description
+- Price
+- Rating
+- Category
+- Additional Information
 
 ---
 
-### 📱 Responsive Design
-- Mobile  
-- Tablet  
-- Desktop  
+## ❤️ Wishlist
+
+- Save favorite trips
+- Stored using LocalStorage
+- Remove trips from wishlist anytime
 
 ---
 
-### ⏳ Loading State
-- Loader during API calls  
+## 📱 Responsive Design
+
+Optimized for:
+
+- ✅ Mobile
+- ✅ Tablet
+- ✅ Desktop
 
 ---
 
-### ⚠️ Empty State
-- No results found UI  
+## ⏳ Loading State
+
+- Displays a loading indicator while fetching data.
 
 ---
 
-### ❌ Error Handling
-- Graceful API failure handling  
+## ⚠️ Empty State
+
+- Shows a meaningful message when no trips are found.
 
 ---
 
-## 🎯 Bonus Features (If Implemented)
+## ❌ Error Handling
 
-- Wishlist (LocalStorage)  
-- Debounced Search  
-- Skeleton Loading  
-- Image Lazy Loading  
-- Animations  
+- Handles API errors gracefully.
+- Displays user-friendly error messages.
 
 ---
 
-## 📁 Folder Structure
+# 🛠️ Tech Stack
 
-```bash
+- React.js
+- JavaScript (ES6+)
+- Vite
+- React Router DOM
+- Axios
+- Tailwind CSS
+- LocalStorage
+
+---
+
+# 🌐 API Used
+
+DummyJSON Products API
+
+Endpoints used:
+
+```
+GET /products
+
+GET /products/search?q=
+
+GET /products/categories
+
+GET /products/category/{category}
+
+GET /products/{id}
+```
+
+Official API Documentation:
+
+https://dummyjson.com/docs/products
+
+---
+
+# 🔄 Data Mapping
+
+| API Field | UI Field |
+| ---------- | -------- |
+| title | Trip Name |
+| category | Destination |
+| price | Trip Price |
+| rating | Rating |
+| description | Description |
+| thumbnail | Trip Image |
+
+---
+
+# 📁 Folder Structure
+
+```text
 src/
 ├── api/
 ├── assets/
@@ -103,7 +174,6 @@ src/
 ├── hooks/
 ├── pages/
 │   ├── HomePage.jsx
-│   ├── TripsPage.jsx
 │   ├── TripDetailsPage.jsx
 │   ├── WishlistPage.jsx
 │   └── ProfilePage.jsx
@@ -113,95 +183,102 @@ src/
 
 ---
 
-## 🌐 API Integration
+# 💡 Assumptions
 
-- GET /products
-- GET /products/search?q=
-- GET /products/categories
-- GET /products/category/{category}
-- GET /products/{id}
-
----
-
-## 🔄 Data Mapping
-
-| API Field | UI Field |
-|----------|----------|
-| title | Trip Name |
-| category | Destination |
-| price | Price |
-| rating | Rating |
-| description | Description |
-| thumbnail | Image |
+- DummyJSON products are treated as travel packages.
+- Product category represents trip destination.
+- Product price represents trip cost per person.
+- Authentication is not required.
+- Wishlist data is stored locally using LocalStorage.
 
 ---
 
-## 💡 Assumptions
+# ⚡ Challenges Faced
 
-- Products = Trips  
-- Category = Destination  
-- Price = Per person cost  
-- No authentication required  
-- Wishlist stored in LocalStorage  
-
----
-
-## 🧩 Challenges Faced
-
-- API data mapping  
-- Search + filter handling  
-- Responsive UI  
-- Loading & error states  
+- Mapping product data into a travel-based UI.
+- Implementing search and category filtering.
+- Managing loading, empty, and error states.
+- Building a responsive layout across different screen sizes.
+- Organizing reusable React components for maintainability.
 
 ---
 
-## 🚀 Future Improvements
+# 🚀 Future Improvements
 
-- Dark Mode  
-- Pagination / Infinite Scroll  
-- Authentication  
-- Booking system  
-- Payment integration  
-- Reviews system  
+- Dark Mode
+- Infinite Scroll
+- Pagination
+- Booking System
+- Authentication
+- Payment Integration
+- User Reviews
+- Share Trip Feature
+- Performance Optimizations
 
 ---
 
-## 🛠️ Setup Instructions
+# 🖥️ Installation & Setup
+
+Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/trip-discovery-app.git
+git clone https://github.com/Sara12-2/Trip-discovery-app.git
+```
+
+Navigate to the project:
+
+```bash
 cd trip-discovery-app
+```
+
+Install dependencies:
+
+```bash
 npm install
+```
+
+Start development server:
+
+```bash
 npm run dev
 ```
 
-Open:
-http://localhost:5173
+Build for production:
 
----
-
-## 📊 Evaluation Focus
-
-- React fundamentals  
-- Component structure  
-- Code readability  
-- API integration  
-- State management  
-- UI/UX  
-- Responsiveness  
-- Error handling  
-
----
-
-## 👨‍💻 Author
-
-Your Name  
-GitHub: Sara12-2  
-Email: saramanzoor76@gmail.com  
-
----
-
-## 📌 Note
-
-This project is for the Buddy In Hills React Frontend Internship Assessment.
+```bash
+npm run build
 ```
+
+Preview production build:
+
+```bash
+npm run preview
+```
+
+---
+
+# 🎯 Project Highlights
+
+- Clean and reusable React components
+- Responsive UI for all devices
+- REST API Integration
+- React Router Navigation
+- Search Functionality
+- Category Filtering
+- Loading & Error States
+- Wishlist using LocalStorage
+- Clean Folder Structure
+- Maintainable Codebase
+
+---
+
+# 👩‍💻 Author
+
+**Sara Manzoor**
+
+GitHub: https://github.com/Sara12-2
+
+Email: saramanzoor76@gmail.com
+
+---
+
